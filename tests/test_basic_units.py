@@ -48,23 +48,23 @@ def test_count_leafs():
     # Assert
     assert result == 17
 
-def test_estimated_number_of_products():
+def test_estimated_number_of_configurations():
     # Prepare
     flamafm=FLAMAFeatureModel(VALID_MODEL)
     
     # Act
-    result = flamafm.estimated_number_of_products()
+    result = flamafm.estimated_number_of_configurations()
 
     # Assert
     assert result == 1904
 
 
-def test_estimated_number_of_products():
+def test_estimated_number_of_configurations():
     # Prepare
     flamafm=FLAMAFeatureModel(VALID_MODEL)
     
     # Act
-    result = flamafm.estimated_number_of_products()
+    result = flamafm.estimated_number_of_configurations()
 
     # Assert
     assert result == 1904
@@ -143,7 +143,7 @@ def test_products_number():
     flamafm=FLAMAFeatureModel(VALID_MODEL)
     
     # Act
-    result = flamafm.products_number()
+    result = flamafm.configurations_number()
 
     # Assert
     assert result == 816
@@ -153,7 +153,7 @@ def test_products():
     flamafm=FLAMAFeatureModel(VALID_MODEL)
     
     # Act
-    result = flamafm.products()
+    result = flamafm.configurations()
 
     # Assert
     assert len(result) == 816
@@ -166,34 +166,34 @@ def test_commonality():
     result = flamafm.commonality(VALID_CONFIG)
 
     # Assert
-    assert 0.0 == 0.0
+    assert 0.0 == result
 
 def test_valid_configuration():
     # Prepare
     flamafm=FLAMAFeatureModel(VALID_MODEL)
     
     # Act
-    result = flamafm.valid_configuration(VALID_CONFIG)
+    result = flamafm.satisfiable_configuration(VALID_CONFIG)
 
     # Assert
     assert result == True
 
-def test_valid_product():
+def test_satisfiable_configuration():
     # Prepare
     flamafm=FLAMAFeatureModel(VALID_MODEL)
     
     # Act
-    result = flamafm.valid_product(VALID_CONFIG)
+    result = flamafm.satisfiable_configuration(VALID_CONFIG)
 
     # Assert
     assert result == True
 
-def test_valid():
+def test_satisfiable():
     # Prepare
     flamafm=FLAMAFeatureModel(VALID_MODEL)
     
     # Act
-    result = flamafm.valid()
+    result = flamafm.satisfiable()
 
     # Assert
     assert result == True

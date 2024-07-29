@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build the Docker image
-docker build --tag flamapyapi .
+docker build --no-cache --tag flamapyapi .
 
 # Run the Docker image
 docker run --name flamapy.api -it -p 8000:8000 flamapyapi

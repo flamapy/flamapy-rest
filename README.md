@@ -35,6 +35,18 @@ Please note: This is a living document and we will continue to update and improv
 Three main interfaces are provided:
 * A REST API: The REST API allows for easy integration with other tools and applications. It is also a more user friendly interface for those who are not familiar with the command line.
 
+Whant it to runint, simply run
+```bash
+pip install flamapy-rest
+gunicorn --bind 0.0.0.0:8000 app:app
+```
+
+Alternatively, you can use docker in this way:
+```bash
+chmod +x start-server.sh
+./start-server.sh
+```
+Or go to [the render deployed version]() it isn't fast, but its free. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

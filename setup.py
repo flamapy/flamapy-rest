@@ -4,10 +4,19 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+def read_requirements(file):
+    with open(file, "r") as fh:
+        return fh.read().splitlines()
+
+# Read requirements from the requirements.txt file
+requirements = read_requirements("requirements.txt")
+
+# Read development requirements from the dev-requirements.txt file
+dev_requirements = read_requirements("requirements-dev.txt")
 
 setuptools.setup(
-    name="flamapy-fm-dist",
-    version="1.6.0.dev0",
+    name="flamapy-rest",
+    version="2.0.0",
     author="Flamapy",
     author_email="flamapy@us.es",
     description="Flamapy feature model is a distribution of the flama framework containing all plugins required to analyze feature models. It also offers a richier API and a complete command line interface and documentation.",
@@ -21,32 +30,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.9',
-    install_requires=[
-        "wheel",
-        "Flask",
-        "gunicorn",
-        "flamapy~=1.6.0.dev0",
-        "flamapy-fm~=1.6.0.dev0",
-        "flamapy-sat~=1.6.0.dev0",
-        "flask-swagger-ui",
-        "flask-restplus",
-        "pytest",
-        "flask_cors",
-        "flasgger",
-        "Fire"
-    ],
+    install_requires=requirements,
     extras_require={
-        'dev': [
-            'pytest',
-            'pytest-mock',
-            'prospector',
-            'mypy',
-            'coverage',
-        ]
-    },
-    entry_points={
-        'console_scripts': [
-            'flamapy-fm-cli = flamapy.interfaces.command_line:flama_fm',
-        ],
-    },
+        'dev': dev_requirements
+    }
 )

@@ -1,0 +1,9 @@
+wheel
+Flask
+gunicorn
+flamapy
+flask-swagger-ui
+flask-restplus
+pytest
+flask_cors
+flasgger

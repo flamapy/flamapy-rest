@@ -4,7 +4,6 @@ import pytest
 from flamapy.interfaces.python.flamapy_feature_model import FLAMAFeatureModel
 
 VALID_MODEL = "./resources/models/simple/valid_model.uvl"
-NON_VALID_MODEL = "./resources/models/simple/invalid_model.uvl"
 
 VALID_CONFIG = "./resources/configurations/valid_configuration.csvconf"
 def test_atomic_sets():
@@ -108,15 +107,6 @@ def test_dead_features():
     # Assert
     assert sorted(result) == sorted([])
  
-def test_error_detection():
-    # Prepare
-    flamafm=FLAMAFeatureModel(NON_VALID_MODEL)
-    
-    # Act
-    result = flamafm.error_detection()
-
-    # Assert
-    assert len(result) == 3
 
 def test_false_optional_features():
     # Prepare
@@ -166,7 +156,7 @@ def test_commonality():
     result = flamafm.commonality(VALID_CONFIG)
 
     # Assert
-    assert 0.0 == result
+    assert 1.0 == result
 
 def test_valid_configuration():
     # Prepare

@@ -191,3 +191,11 @@ pytest               # tests
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## Acknowledgements
+
+Special thanks to [José Antonio Zamudio Amaya](https://www.linkedin.com/in/joszamama/) for
+identifying the need for a REST API on top of Flamapy and for providing the first implementation of
+the idea, on which this project was built.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
